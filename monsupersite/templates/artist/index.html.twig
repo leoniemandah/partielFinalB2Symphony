@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Artistes!
+{% endblock %}
+
+{% block body %}
+	<div class="jumbotron jumbotron-fluid">
+		<div class="container">
+			<h1 class="display-4">Nos Artites</h1>
+			<p class="lead">Les plus tendances</p>
+		</div>
+	</div>
+
+	<div class="container">
+
+		{% for artist in artist %}
+			<div class="d-lg-flex border-bottom border-dark pb-3 mb-3">
+				<div class="mr-lg-3 product-img">
+					<a href="#">
+						<img class="img-fluid" src="{{ artist.picture }}" alt="{{ artist.picture }}"/>
+					</a>
+				</div>
+
+				<div class="infos">
+					<h3>
+						<a href="#" class="text-decoration-none text-body">
+							{{ artist.name }}
+						</a>
+					</h3>
+					<a href="{{ path('show', { id: artist.id }) }}" class="btn btn-light">En savoir +</a>
+
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+
+{% endblock %}

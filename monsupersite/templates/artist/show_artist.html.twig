@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div class="d-lg-flex border-bottom border-dark pb-3 mb-3">
+		<div class="mr-lg-3 product-img">
+			<a href="#">
+				<img class="img-fluid" src="{{ artist.picture }}" alt="{{ artist.picture }}"/>
+			</a>
+		</div>
+
+		<div class="infos">
+			<h3>
+				<a href="#" class="text-decoration-none text-body">
+					{{ artist.name }}
+				</a>
+			</h3>
+		</div>
+
+	{% endblock %}

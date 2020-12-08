@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon Super Site!
+{% endblock %}
+
+{% block body %}
+
+	<div class="jumbotron jumbotron-fluid">
+		<div class="container">
+			<h1 class="display-4">Nos derniers Albums en Vogue</h1>
+			<p class="lead">La distraction ne s'achète pas</p>
+		</div>
+	</div>
+
+	<div class="container">
+		<h2 class="mb-5">Nos derniers Albums</h2>
+		{% for album in album %}
+			<div class="d-lg-flex border-bottom border-dark pb-3 mb-3">
+				<div class="mr-lg-3 product-img">
+					<a href="#">
+						<img class="img-fluid" src="{{ album.cover }}" alt="{{ album.cover }}"/>
+					</a>
+				</div>
+
+				<div class="infos">
+					<h3>
+						<a href="#" class="text-decoration-none text-body">
+							{{ album.name }}
+						</a>
+					</h3>
+					<p>{{ album.releaseYear|date('Y') }}</p>
+
+
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+
+{% endblock %}
